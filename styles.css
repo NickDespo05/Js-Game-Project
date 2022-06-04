@@ -22,7 +22,22 @@ h3 {
     font-size: 7vh;
     text-align: center;
     position: relative;
-    top: 35vh;
+    top: 0vh;
     left: 10vw;
     font-family: "Courier New", Courier, monospace;
+}
+.title_character {
+    display: inline;
+    width: 20vw;
+    height: auto;
+    position: relative;
+    bottom: 10vh;
+}
+#john {
+    position: relative;
+    left: 10vw;
+}
+#lisa {
+    position: relative;
+    left: 15vw;
 }
