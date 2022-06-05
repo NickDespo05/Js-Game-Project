@@ -1,37 +1,38 @@
-const john_selection = document.getElementById("john");
-const lisa_selection = document.getElementById("lisa");
-
+let mainDiv = document.getElementById("main");
+let fighter = null;
 function createSelection(character) {
-    const selectedCharacter = character;
-    //prettier-ignore
-    selectedCharacter.addEventListener("click", function (character) {
-      var characterSelected = selectedCharacter;
-       if (characterSelected = "lisa") {
-          console.log(characterSelected);
-          return characterSelected;
-       }
-       
-      if (characterSelected = 'john') {
-           console.log(characterSelected);
-          return characterSelected;
-       }
-       else {
-          console.log('else');
-       }
+    const selectedCharacter = document.getElementById(character);
+    selectedCharacter.addEventListener("click", function () {
+        var characterSelected = selectedCharacter;
+        if ((characterSelected = "lisa")) {
+            console.log(selectedCharacter);
+        } else if ((characterSelected = "john")) {
+            console.log(selectedCharacter);
+        } else {
+            console.log("else");
+        }
 
-      //  switch (characterSelected) {
-      //      case "lisa":
-      //          console.log("lisa");
-      //          return characterSelected;
-      //      case "john":
-      //          console.log("john");
-      //          return characterSelected;
-      //     default:
-      //        break;
-      //  }
+        //  switch (characterSelected) {
+        //      case "lisa":
+        //          console.log("lisa");
+        //          return characterSelected;
+        //      case "john":
+        //          console.log("john");
+        //          return characterSelected;
+        //     default:
+        //        break;
+        //  }
+        if ((selectedCharacter.id = "john")) {
+            fighter = "john";
+        } else if ((selectedCharacter.id = "lisa")) {
+            fighter = "lisa";
+        } else {
+            mainDiv.innerHTML("Error");
+        }
 
+        return fighter;
     });
 }
-createSelection(lisa_selection);
+const lisa_selection = createSelection("lisa");
 
-createSelection(john_selection);
+const john_selection = createSelection("john");
