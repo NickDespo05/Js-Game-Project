@@ -41,3 +41,10 @@ h3 {
     position: relative;
     left: 29vw;
 }
+#background {
+    width: 700px;
+    height: 700px;
+    position: relative;
+    left: 25vw;
+    bottom: 15vh;
+}

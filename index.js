@@ -1,5 +1,10 @@
 let mainDiv = document.getElementById("main");
 let fighter = null;
+let playableArea = document.getElementById("playable_area");
+
+function placeCharacter(character) {
+    playableArea.append(document.getElementById(character));
+}
 function createSelection(character) {
     const selectedCharacter = document.getElementById(character);
     selectedCharacter.addEventListener("click", function () {
@@ -24,8 +29,10 @@ function createSelection(character) {
         //  }
         if ((selectedCharacter.id = "john")) {
             fighter = "john";
+            window.location.href = "gamescreen.html";
         } else if ((selectedCharacter.id = "lisa")) {
             fighter = "lisa";
+            window.location.href = "gamescreen.html";
         } else {
             mainDiv.innerHTML("Error");
         }
