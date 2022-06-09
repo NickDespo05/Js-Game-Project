@@ -1,18 +1,27 @@
 let mainDiv = document.getElementById("main");
 let fighter = null;
 let playableArea = document.getElementById("playable_area");
-let character1 = document.getElementById("john");
+
 function placeCharacter(character) {
     playableArea.append(document.getElementById(character));
+    document.getElementById(character).style.width = "5vw";
+    document.getElementById(character).style.height = "5vw";
+    document.getElementById(character).style.position = "relative";
+    document.getElementById(character).style.bottom = "680px";
+    document.getElementById(character).style.left = "-250px";
+    document.getElementById(character).style.zIndex = "99999999";
 }
 
-let johnSelected = document.querySelector("#john");
+var johnSelected = document.querySelector("#john");
 let lisaSelected = document.querySelector("#lisa");
 let philSelected = document.querySelector("#phil");
 let jenSelected = document.querySelector("#jen");
 
 function createSelection(character) {
-    character.addEventListener("click", function (character) {
+    let selectedCharacter = document.getElementById("john");
+    console.log(selectedCharacter);
+    console.log(character);
+    selectedCharacter.addEventListener("click", function (character) {
         // var characterSelected = selectedCharacter;
         // if ((characterSelected = "lisa")) {
         //     console.log(selectedCharacter);
@@ -33,16 +42,9 @@ function createSelection(character) {
         //        break;
         //  }
         if ((character.id = "john")) {
-            fighter = "john";
-            window.location.href = "gamescreen.html";
-            //prettier-ignore
-            document.playableArea.appendChild("Pixel-Art JS-Game/John/John-Nuetral.png");
-            character1.style.width("10vw");
-            character1.style.height("10vh");
-            character1.style.zIndex("1");
+            placeCharacter("john");
+            selectionDisappear();
         } else if ((character.id = "lisa")) {
-            fighter = "lisa";
-            window.location.href = "gamescreen.html";
         } else {
             mainDiv.innerHTML("Error");
         }
@@ -50,6 +52,21 @@ function createSelection(character) {
         return fighter;
     });
 }
-const lisa_selection = createSelection(lisaSelected);
+function selectionDisappear() {
+    let mainDiv = document.getElementById("mainDiv");
+    mainDiv.style.opacity = "0";
+}
 
-const john_selection = createSelection(johnSelected);
+johnSelected.addEventListener("keydown", checkKeyPress, false);
+function checkKeyPress(key) {
+    if (key.keyCode == "87") {
+        movingThing.style.bottom += "10px";
+        console.log("w pressed");
+    }
+}
+
+//https://www.youtube.com/watch?v=VBVOXTgXX2U
+
+const lisa_selection = createSelection("lisa");
+
+const john_selection = createSelection("john");

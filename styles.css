@@ -32,11 +32,9 @@ h3 {
     height: auto;
     position: relative;
     bottom: 10vh;
+    opacity: 1;
 }
-#john {
-    position: relative;
-    left: 10vw;
-}
+
 #lisa {
     position: relative;
     left: 29vw;
@@ -47,4 +45,20 @@ h3 {
     position: relative;
     left: 25vw;
     bottom: 15vh;
+}
+#mainDiv {
+    position: relative;
+    bottom: 135vh;
+    background-color: gray;
+    height: 100vh;
+    opacity: 0.9;
+}
+#john {
+    position: relative;
+    left: 10vw;
+    opacity: 1;
+}
+#game_title {
+    position: relative;
+    top: -3vh;
 }
