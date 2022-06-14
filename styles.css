@@ -40,15 +40,15 @@ h3 {
     left: 29vw;
 }
 #background {
-    width: 700px;
-    height: 700px;
+    width: 50vw;
+    height: 90vh;
     position: relative;
     left: 25vw;
     bottom: 15vh;
 }
 #mainDiv {
     position: relative;
-    bottom: 135vh;
+    bottom: 167vh;
     background-color: gray;
     height: 100vh;
     opacity: 0.9;
@@ -73,22 +73,26 @@ h3 {
     width: auto;
 }
 #firstHouse {
-    bottom: 10vh;
-    left: 1vw;
+    bottom: 12vh;
+    right: 8vw;
 }
 #secondHouse {
-    right: 15vw;
-    bottom: 29vh;
+    right: 24vw;
+    bottom: 35vh;
 }
 #thirdHouse {
-    bottom: 15vh;
-    right: 102vh;
+    bottom: 55vh;
+    left: 54vh;
 }
 #fourthHouse {
-    bottom: 55vh;
-    left: 52vw;
+    bottom: 50vh;
+    left: 45vw;
 }
 #fifthHouse {
-    bottom: 90vh;
-    left: 37.5vw;
+    bottom: 75vh;
+    left: 30vw;
+}
+#sixthHouse {
+    bottom: 105vh;
+    left: 13vw;
 }
