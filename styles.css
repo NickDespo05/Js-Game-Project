@@ -62,3 +62,33 @@ h3 {
     position: relative;
     top: -3vh;
 }
+.house1 {
+    position: relative;
+    height: 30vh;
+    width: auto;
+}
+.house2 {
+    position: relative;
+    height: 40vh;
+    width: auto;
+}
+#firstHouse {
+    bottom: 10vh;
+    left: 1vw;
+}
+#secondHouse {
+    right: 15vw;
+    bottom: 29vh;
+}
+#thirdHouse {
+    bottom: 15vh;
+    right: 102vh;
+}
+#fourthHouse {
+    bottom: 55vh;
+    left: 52vw;
+}
+#fifthHouse {
+    bottom: 90vh;
+    left: 37.5vw;
+}
