@@ -96,3 +96,9 @@ h3 {
     bottom: 105vh;
     left: 13vw;
 }
+#timer {
+    position: relative;
+    right: 37vw;
+    bottom: 80vh;
+    z-index: -200;
+}
