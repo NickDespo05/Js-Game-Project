@@ -45,7 +45,7 @@ function moveCharacter(element) {
 //sixthHouse coords (-120, 1050)
 
 function checkPosition() {
-    if (x >= -120 && x <= -200 && y >= 600 && y <= 690) {
+    if (x <= -120 && x >= -200 && y >= 600 && y <= 690) {
         nearHouse = true;
         houseNumber = 6;
         questionPlayer();
@@ -78,11 +78,10 @@ function questionPlayer(element) {
     if (nearHouse == true) {
         let answer = window.prompt(questions[i]);
         let answerCheck = checkanswer(answer, i);
-        if (answer != null) {
-        } else {
-        }
+
         i++;
         nearHouse = false;
+    } else {
     }
 }
 let i = 0;
@@ -175,8 +174,8 @@ function createSelection(character) {
 function selectionDisappear() {
     let mainDiv = document.getElementById("mainDiv");
     mainDiv.style.opacity = "0";
-    let timer = document.getElementById("time");
-    timer.appendChild(seconds);
+    // let timer = document.getElementById("time");
+    // timer.append(`${seconds}`);
 }
 
 function timeFunc() {
@@ -187,12 +186,12 @@ function timeFunc() {
     }, 1000);
 }
 
-window.alert(
-    "Welcome to FireFighter, the game that combines the rush or fighting fires with trivia! To start, select a character that you see on screen now. Once you have selected a character, use WASD to walk towards any houses on fire."
-);
-window.alert(
-    "Once you walk towards a house that is on fire you will be prompted to answer a question via the top of your screen. Please use capital letters when neccesary and as fast as possible! Time limit will be 2 minutes and your score will be recoreded!"
-);
+// window.alert(
+//     "Welcome to FireFighter, the game that combines the rush or fighting fires with trivia! To start, select a character that you see on screen now. Once you have selected a character, use WASD to walk towards any houses on fire."
+// );
+// window.alert(
+//     "Once you walk towards a house that is on fire you will be prompted to answer a question via the top of your screen. Please use capital letters when neccesary and as fast as possible! Time limit will be 2 minutes and your score will be recoreded!"
+// );
 let mainDiv = document.getElementById("main");
 let fighter = null;
 let playableArea = document.getElementById("playable_area");

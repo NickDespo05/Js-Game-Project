@@ -34,7 +34,6 @@ h3 {
     bottom: 10vh;
     opacity: 1;
 }
-
 #lisa {
     position: relative;
     left: 29vw;
@@ -95,10 +94,4 @@ h3 {
 #sixthHouse {
     bottom: 105vh;
     left: 13vw;
-}
-#timer {
-    position: relative;
-    right: 37vw;
-    bottom: 80vh;
-    z-index: -200;
 }
