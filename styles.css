@@ -47,7 +47,7 @@ h3 {
 }
 #mainDiv {
     position: relative;
-    bottom: 167vh;
+    bottom: 253vh;
     background-color: gray;
     height: 100vh;
     opacity: 0.9;
@@ -94,4 +94,47 @@ h3 {
 #sixthHouse {
     bottom: 105vh;
     left: 13vw;
+}
+.fire {
+    position: relative;
+    width: 9vw;
+}
+#fire1 {
+    bottom: 59vh;
+    right: 24vw;
+}
+#fire2 {
+    bottom: 87vh;
+    right: 32vw;
+}
+#fire3 {
+    bottom: 66vh;
+    right: 56vw;
+}
+#fire4 {
+    bottom: 91vh;
+    left: 64vw;
+}
+#fire5 {
+    bottom: 66vh;
+    left: 55.5vw;
+}
+#fire6 {
+    bottom: 127vh;
+    left: 46vw;
+}
+#timer {
+    position: relative;
+    right: 40vw;
+    bottom: 160vh;
+}
+#score {
+    position: relative;
+    bottom: 200vh;
+    left: 37vw;
+}
+#time {
+    position: relative;
+    left: 35vw;
+    top: -15vh;
 }

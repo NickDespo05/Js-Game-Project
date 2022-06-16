@@ -1,15 +1,19 @@
 function changeCoords(character) {
     if (direction == "north") {
         y += 10;
+        checkPosition();
     }
     if (direction == "west") {
         x -= 10;
+        checkPosition();
     }
     if (direction == "south") {
         y -= 10;
+        checkPosition();
     }
     if (direction == "east") {
         x += 10;
+        checkPosition();
     }
     character.style.bottom = y + "px";
     character.style.left = x + "px";
@@ -19,19 +23,15 @@ function moveCharacter(element) {
         if (e.key == "w") {
             direction = "north";
             changeCoords(element);
-            checkPosition();
         } else if (e.key == "a") {
             direction = "west";
             changeCoords(element);
-            checkPosition();
         } else if (e.key == "s") {
             direction = "south";
             changeCoords(element);
-            checkPosition();
         } else if (e.key == "d") {
             direction = "east";
             changeCoords(element);
-            checkPosition();
         }
         console.log(x);
         console.log(y);
@@ -45,90 +45,96 @@ function moveCharacter(element) {
 //sixthHouse coords (-120, 1050)
 
 function checkPosition() {
-    if (x <= -120 && x >= -200 && y >= 600 && y <= 690) {
+    if (x >= 1170 && x <= 2000 && y >= 1940 && y <= 1970) {
         nearHouse = true;
         houseNumber = 6;
         questionPlayer();
-    } else if (x <= -580 && x >= -650 && y >= 620 && y <= 670) {
-        nearhouse = true;
+        console.log(houseNumber);
+    } else if (x >= 680 && x <= 700 && y >= 1470 && y <= 1500) {
+        nearHouse = true;
         houseNumber = 3;
         questionPlayer();
-    } else if (x >= -500 && x <= -450 && y >= 560 && y <= 610) {
+        console.log(houseNumber);
+    } else if (x >= 730 && x <= 750 && y >= 1470 && y <= 1500) {
         nearHouse = true;
         houseNumber = 1;
         questionPlayer();
-    } else if (x >= -510 && x <= -460 && y >= 800 && y <= 850) {
-        nearhouse = true;
+        console.log(houseNumber);
+    } else if (x >= 800 && x <= 830 && y >= 1650 && y <= 1700) {
+        nearHouse = true;
         houseNumber = 2;
         questionPlayer();
-    } else if (x >= -110 && x <= -160 && y >= 530 && y <= 580) {
+        console.log(houseNumber);
+    } else if (x >= 1170 && x <= 1200 && y >= 1390 && y <= 1400) {
         houseNumber = 4;
         nearHouse = true;
         questionPlayer();
-    } else if (x >= -150 && x <= -100 && y >= 790 && y <= 740) {
+        console.log(houseNumber);
+    } else if (x >= 1170 && x <= 1200 && y >= 1620 && y <= 1650) {
         houseNumber = 5;
         nearHouse = true;
         questionPlayer();
+        console.log(houseNumber);
     } else {
         houseNumber = null;
         nearHouse = false;
     }
 }
-function questionPlayer(element) {
-    if (nearHouse == true) {
-        let answer = window.prompt(questions[i]);
-        let answerCheck = checkanswer(answer, i);
-
-        i++;
+function questionPlayer() {
+    if (nearHouse === true) {
+        answer = window.prompt(questions[i]);
+        checkanswer(answer, i);
         nearHouse = false;
     } else {
+        nearHouse = false;
     }
+    i++;
 }
+var answer;
 let i = 0;
 function checkanswer(answer, iteration) {
-    if (question[iteration] == 0 && answer == answers[iteration]) {
+    if (questions[iteration] == 0 && answer === answers[0]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else if (question[iteration] == 1 && answer == answers[iteration]) {
+        fireDissapear(iteration);
+    } else if (questions[iteration] == 1 && answer === answers[1]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else if (question[iteration] == 2 && answer == answers[iteration]) {
+        fireDissapear(iteration);
+    } else if (questions[iteration] == 2 && answer === answers[2]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else if (question[iteration] == 3 && answer == answers[iteration]) {
+        fireDissapear(iteration);
+    } else if (questions[iteration] == 3 && answer === answers[3]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else if (question[iteration] == 4 && answer == answers[iteration]) {
+        fireDissapear(iteration);
+    } else if (questions[iteration] == 4 && answer === answers[4]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else if (question[iteration] == 5 && answer == answers[iteration]) {
+        fireDissapear(iteration);
+    } else if (questions[iteration] == 5 && answer === answers[5]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else if (question[iteration] == 6 && answer == answers[iteration]) {
+        fireDissapear(iteration);
+    } else if (questions[iteration] == 6 && answer === answers[6]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else if (question[iteration] == 7 && answer == answers[iteration]) {
+        fireDissapear(iteration);
+    } else if (questions[iteration] == 7 && answer === answers[7]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else if (question[iteration] == 8 && answer == answers[iteration]) {
+        fireDissapear(iteration);
+    } else if (questions[iteration] == 8 && answer === answers[8]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else if (question[iteration] == 9 && answer == answers[iteration]) {
+        fireDissapear(iteration);
+    } else if (questions[iteration] == 9 && answer === answers[9]) {
         pointCount++;
         window.alert("Correct! Plus 1 Point");
-        return true;
-    } else {
-        window.alert(`Incorrect the correct answer was ${answers[iteration]}`);
-        return false;
+        fireDissapear(iteration);
+    } else if (answer != answers[iteration]) {
+        window.alert(`Incorrect, the correct answer was ${answers[iteration]}`);
     }
 }
 function placeCharacter(character) {
@@ -139,6 +145,8 @@ function placeCharacter(character) {
     document.getElementById(character).style.bottom = "0";
     document.getElementById(character).style.left = "0";
     document.getElementById(character).style.zIndex = "99999999";
+    timer.innerHTML = `Time: ${seconds}`;
+    // timeFunc();
 }
 function createSelection(character) {
     let selectedCharacter = document.getElementById(character);
@@ -174,30 +182,33 @@ function createSelection(character) {
 function selectionDisappear() {
     let mainDiv = document.getElementById("mainDiv");
     mainDiv.style.opacity = "0";
-    // let timer = document.getElementById("time");
-    // timer.append(`${seconds}`);
 }
-
-function timeFunc() {
-    setTimeout(function () {
-        for (let i = 0; i <= 120; i++) {
-            seconds += 1;
-        }
-    }, 1000);
+function fireDissapear(i) {
+    fires[i].style.zIndex = "-5";
 }
+let timer = document.getElementById("time");
+// function timeFunc() {
+//     while (seconds < 121) {
+//         setTimeout(function () {
+//             seconds += 1;
 
-// window.alert(
-//     "Welcome to FireFighter, the game that combines the rush or fighting fires with trivia! To start, select a character that you see on screen now. Once you have selected a character, use WASD to walk towards any houses on fire."
-// );
-// window.alert(
-//     "Once you walk towards a house that is on fire you will be prompted to answer a question via the top of your screen. Please use capital letters when neccesary and as fast as possible! Time limit will be 2 minutes and your score will be recoreded!"
-// );
+//             console.log(seconds);
+//         }, 1000);
+//     }
+// }
+
+window.alert(
+    "Welcome to FireFighter, the game that combines the rush or fighting fires with trivia! To start, select a character that you see on screen now. Once you have selected a character, use WASD to walk towards any houses on fire."
+);
+window.alert(
+    "Once you walk towards a house that is on fire you will be prompted to answer a question via the top of your screen. Please use capital letters when neccesary and as fast as possible! Time limit will be 2 minutes and your score will be recoreded!"
+);
 let mainDiv = document.getElementById("main");
 let fighter = null;
 let playableArea = document.getElementById("playable_area");
-var direction = null,
-    x = -710,
-    y = 1200;
+var direction = null;
+var x = 480;
+var y = 2000;
 var nearHouse, houseNumber;
 var johnSelected = document.querySelector("#john");
 let lisaSelected = document.querySelector("#lisa");
@@ -224,7 +235,7 @@ let questions = [
     "Who was the first man on the moon?",
     "What was the name of the first satellite sent into space?",
 ];
-let answer = [
+const answers = [
     "George Washington",
     "Washington",
     "Harrisburg",
@@ -235,6 +246,14 @@ let answer = [
     "270",
     "Neil Armstrong",
     "Sputnik",
+];
+let fires = [
+    document.getElementById("fire1"),
+    document.getElementById("fire2"),
+    document.getElementById("fire3"),
+    document.getElementById("fire4"),
+    document.getElementById("fire5"),
+    document.getElementById("fire6"),
 ];
 //https://github.com/NickDespo05/JS-Web-Game-Part-7.git
 //https://www.youtube.com/watch?v=VBVOXTgXX2U
