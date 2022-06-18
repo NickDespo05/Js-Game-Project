@@ -187,24 +187,24 @@ function createSelection(character) {
             selectedCharacter.style.left = x + "px";
             selectedCharacter.style.bottom = y + "px";
         }
-        if ((character.id = "lisa")) {
+        else if ((character.id = "lisa")) {
             placeCharacter("lisa");
             selectionDisappear();
-            currentCharacter = lisaSelected;
+
             selectedCharacter.style.left = x + "px";
             selectedCharacter.style.bottom = y + "px";
         }
-        if ((character.id = "phil")) {
+        else if ((character.id = "phil")) {
             placeCharacter("phil");
             selectionDisappear();
-            currentCharacter = philSelected;
+      
             selectedCharacter.style.left = x + "px";
             selectedCharacter.style.bottom = y + "px";
         }
-        if ((character.id = "jen")) {
+        else if ((character.id = "jen")) {
             placeCharacter("jen");
             selectionDisappear();
-            currentCharacter = jenSelected;
+
             selectedCharacter.style.left = x + "px";
             selectedCharacter.style.bottom = y + "px";
         }
