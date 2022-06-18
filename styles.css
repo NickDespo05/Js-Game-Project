@@ -112,12 +112,12 @@ h3 {
     right: 56vw;
 }
 #fire4 {
-    bottom: 91vh;
-    left: 64vw;
+    bottom: 66vh;
+    left: 65vw;
 }
 #fire5 {
-    bottom: 66vh;
-    left: 55.5vw;
+    bottom: 91vh;
+    left: 55vw;
 }
 #fire6 {
     bottom: 127vh;
@@ -127,6 +127,7 @@ h3 {
     position: relative;
     right: 40vw;
     bottom: 160vh;
+    opacity: 0;
 }
 #score {
     position: relative;
@@ -137,4 +138,9 @@ h3 {
     position: relative;
     left: 35vw;
     top: -15vh;
+}
+#scoreNumber {
+    position: relative;
+    left: 43vw;
+    top: -18vh;
 }

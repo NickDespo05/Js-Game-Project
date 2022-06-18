@@ -33,8 +33,6 @@ function moveCharacter(element) {
             direction = "east";
             changeCoords(element);
         }
-        console.log(x);
-        console.log(y);
     });
 }
 //thirdHouse coords: (-580,620)
@@ -45,36 +43,66 @@ function moveCharacter(element) {
 //sixthHouse coords (-120, 1050)
 
 function checkPosition() {
-    if (x >= 1170 && x <= 2000 && y >= 1940 && y <= 1970) {
+    if (
+        x >= 1170 &&
+        x <= 2000 &&
+        y >= 1940 &&
+        y <= 1970 &&
+        house6Fire == true
+    ) {
         nearHouse = true;
         houseNumber = 6;
-        questionPlayer();
-        console.log(houseNumber);
-    } else if (x >= 680 && x <= 700 && y >= 1470 && y <= 1500) {
+        checkFire();
+    } else if (
+        x >= 680 &&
+        x <= 700 &&
+        y >= 1470 &&
+        y <= 1500 &&
+        house3Fire == true
+    ) {
         nearHouse = true;
         houseNumber = 3;
-        questionPlayer();
-        console.log(houseNumber);
-    } else if (x >= 730 && x <= 750 && y >= 1470 && y <= 1500) {
+        checkFire();
+    } else if (
+        x >= 730 &&
+        x <= 750 &&
+        y >= 1470 &&
+        y <= 1500 &&
+        house1Fire == true
+    ) {
         nearHouse = true;
         houseNumber = 1;
-        questionPlayer();
-        console.log(houseNumber);
-    } else if (x >= 800 && x <= 830 && y >= 1650 && y <= 1700) {
+        checkFire();
+    } else if (
+        x >= 800 &&
+        x <= 830 &&
+        y >= 1650 &&
+        y <= 1700 &&
+        house2Fire == true
+    ) {
         nearHouse = true;
         houseNumber = 2;
-        questionPlayer();
-        console.log(houseNumber);
-    } else if (x >= 1170 && x <= 1200 && y >= 1390 && y <= 1400) {
+        checkFire();
+    } else if (
+        x >= 1170 &&
+        x <= 1200 &&
+        y >= 1390 &&
+        y <= 1400 &&
+        house4Fire == true
+    ) {
         houseNumber = 4;
         nearHouse = true;
-        questionPlayer();
-        console.log(houseNumber);
-    } else if (x >= 1170 && x <= 1200 && y >= 1620 && y <= 1650) {
+        checkFire();
+    } else if (
+        x >= 1170 &&
+        x <= 1200 &&
+        y >= 1620 &&
+        y <= 1650 &&
+        house5Fire == true
+    ) {
         houseNumber = 5;
         nearHouse = true;
-        questionPlayer();
-        console.log(houseNumber);
+        checkFire();
     } else {
         houseNumber = null;
         nearHouse = false;
@@ -82,61 +110,61 @@ function checkPosition() {
 }
 function questionPlayer() {
     if (nearHouse === true) {
-        answer = window.prompt(questions[i]);
+        answer = prompt(questions[i]);
         checkanswer(answer, i);
         nearHouse = false;
     } else {
         nearHouse = false;
     }
     i++;
+    console.log(i);
+    checkScore();
 }
-var answer;
-let i = 0;
+
 function checkanswer(answer, iteration) {
-    if (questions[iteration] == 0 && answer === answers[0]) {
+    if (iteration == 0 && answer == answers[0]) {
         pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (questions[iteration] == 1 && answer === answers[1]) {
+        score.innerHTML = `${pointCount}`;
+        fireDissapear();
+    }
+    if (iteration == 1 && answer === answers[1]) {
         pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (questions[iteration] == 2 && answer === answers[2]) {
+        fireDissapear();
+        score.innerHTML = `${pointCount}`;
+    }
+    if (iteration == 2 && answer === answers[2]) {
         pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (questions[iteration] == 3 && answer === answers[3]) {
+        fireDissapear();
+        score.innerHTML = `${pointCount}`;
+    }
+    if (iteration == 3 && answer === answers[3]) {
         pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (questions[iteration] == 4 && answer === answers[4]) {
+        fireDissapear();
+        score.innerHTML = `${pointCount}`;
+    }
+    if (iteration == 4 && answer === answers[4]) {
         pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (questions[iteration] == 5 && answer === answers[5]) {
+        fireDissapear();
+        score.innerHTML = `${pointCount}`;
+    }
+    if (iteration == 5 && answer === answers[5]) {
         pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (questions[iteration] == 6 && answer === answers[6]) {
+        fireDissapear();
+
+        score.innerHTML = `${pointCount}`;
+    }
+    if (iteration == 6 && answer === answers[6]) {
         pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (questions[iteration] == 7 && answer === answers[7]) {
-        pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (questions[iteration] == 8 && answer === answers[8]) {
-        pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (questions[iteration] == 9 && answer === answers[9]) {
-        pointCount++;
-        window.alert("Correct! Plus 1 Point");
-        fireDissapear(iteration);
-    } else if (answer != answers[iteration]) {
+        fireDissapear();
+        score.innerHTML = `${pointCount}`;
+    }
+
+    if (answer != answers[iteration]) {
         window.alert(`Incorrect, the correct answer was ${answers[iteration]}`);
+        rubble();
     }
 }
+
 function placeCharacter(character) {
     playableArea.append(document.getElementById(character));
     document.getElementById(character).style.width = "5vw";
@@ -145,8 +173,7 @@ function placeCharacter(character) {
     document.getElementById(character).style.bottom = "0";
     document.getElementById(character).style.left = "0";
     document.getElementById(character).style.zIndex = "99999999";
-    timer.innerHTML = `Time: ${seconds}`;
-    // timeFunc();
+    // timer.innerHTML = `Time: ${seconds}`;
 }
 function createSelection(character) {
     let selectedCharacter = document.getElementById(character);
@@ -183,19 +210,130 @@ function selectionDisappear() {
     let mainDiv = document.getElementById("mainDiv");
     mainDiv.style.opacity = "0";
 }
-function fireDissapear(i) {
-    fires[i].style.zIndex = "-5";
+function fireDissapear() {
+    if (houseNumber == 1) {
+        fire1.style.opacity = "0";
+        house1Fire = false;
+    }
+    if (houseNumber == 2) {
+        fire2.style.opacity = "0";
+        house2Fire = false;
+    }
+    if (houseNumber == 3) {
+        fire3.style.opacity = "0";
+        house3Fire = false;
+    }
+    if (houseNumber == 4) {
+        fire4.style.opacity = "0";
+        house4Fire = false;
+    }
+    if (houseNumber == 5) {
+        fire5.style.opacity = "0";
+        house5Fire = false;
+    }
+    if (houseNumber == 6) {
+        fire6.style.opacity = "0";
+        house6Fire = false;
+    }
 }
-let timer = document.getElementById("time");
-// function timeFunc() {
-//     while (seconds < 121) {
-//         setTimeout(function () {
-//             seconds += 1;
+//prettier-ignore
+function rubble() {
+    if (houseNumber == 1) {
+        fire1.src =
+            "FireFight Game Scene and Items/rubble-game.jpg";
+        house1Fire = false;
+    }
+    if (houseNumber == 2) {
+        fire2.src =
+            "FireFight Game Scene and Items/rubble-game.jpg";
+        house2Fire = false;
+    }
+    if (houseNumber == 3) {
+        fire3.src =
+            "FireFight Game Scene and Items/rubble-game.jpg";
+        house3Fire = false;
+    }
+    if (houseNumber == 4) {
+        fire4.src =
+            "FireFight Game Scene and Items/rubble-game.jpg";
+        house4Fire = false;
+    }
+    if (houseNumber == 5) {
+        fire5.src =
+            "FireFight Game Scene and Items/rubble-game.jpg";
+        house5Fire = false;
+    }
+    if (houseNumber == 6) {
+        fire6.src =
+            "FireFight Game Scene and Items/rubble-game.jpg";
+        house6Fire = false;
+    }
+}
+function checkFire() {
+    if (houseNumber == 1 && house1Fire == true && nearHouse == true) {
+        questionPlayer();
+    }
+    if (houseNumber == 2 && house2Fire == true && nearHouse == true) {
+        questionPlayer();
+    }
+    if (houseNumber == 3 && house3Fire == true && nearHouse == true) {
+        questionPlayer();
+    }
+    if (houseNumber == 4 && house4Fire == true && nearHouse == true) {
+        questionPlayer();
+    }
+    if (houseNumber == 5 && house5Fire == true && nearHouse == true) {
+        questionPlayer();
+    }
+    if (houseNumber == 6 && house6Fire == true && nearHouse == true) {
+        questionPlayer();
+    }
+    if (nearHouse == true && house1Fire == false && houseNumber == 1) {
+        window.alert(
+            "That house has turned to rubble. Go to another one and answer its question"
+        );
+    }
+    if (nearHouse == true && house2Fire == false && houseNumber == 2) {
+        window.alert(
+            "That house has turned to rubble. Go to another one and answer its question"
+        );
+    }
+    if (nearHouse == true && house3Fire == false && houseNumber == 3) {
+        window.alert(
+            "That house has turned to rubble. Go to another one and answer its question"
+        );
+    }
+    if (nearHouse == true && house4Fire == false && houseNumber == 4) {
+        window.alert(
+            "That house has turned to rubble. Go to another one and answer its question"
+        );
+    }
+    if (nearHouse == true && house5Fire == false && houseNumber == 5) {
+        window.alert(
+            "That house has turned to rubble. Go to another one and answer its question"
+        );
+    }
+    if (nearHouse == true && house6Fire == false && houseNumber == 6) {
+        window.alert(
+            "That house has turned to rubble. Go to another one and answer its question"
+        );
+    }
+}
 
-//             console.log(seconds);
-//         }, 1000);
-//     }
-// }
+function checkScore() {
+    if (pointCount > 3 && i == 6) {
+        window.alert("You won!");
+        console.log("Won");
+        doscument.querySelector("h1").innerHTML = "You won";
+    } else if (pointCount < 4 && i == 6) {
+        window.alert("You lost! :( Refresh to try again!");
+        console.log("Lost");
+    } else {
+        console.log("Error");
+    }
+    console.log("checked");
+    console.log(pointCount);
+}
 
 window.alert(
     "Welcome to FireFighter, the game that combines the rush or fighting fires with trivia! To start, select a character that you see on screen now. Once you have selected a character, use WASD to walk towards any houses on fire."
@@ -203,6 +341,7 @@ window.alert(
 window.alert(
     "Once you walk towards a house that is on fire you will be prompted to answer a question via the top of your screen. Please use capital letters when neccesary and as fast as possible! Time limit will be 2 minutes and your score will be recoreded!"
 );
+window.alert("To win, get at least 4 questions right! Good luck!");
 let mainDiv = document.getElementById("main");
 let fighter = null;
 let playableArea = document.getElementById("playable_area");
@@ -247,13 +386,25 @@ const answers = [
     "Neil Armstrong",
     "Sputnik",
 ];
-let fires = [
-    document.getElementById("fire1"),
-    document.getElementById("fire2"),
-    document.getElementById("fire3"),
-    document.getElementById("fire4"),
-    document.getElementById("fire5"),
-    document.getElementById("fire6"),
-];
+
+var answer;
+var i = 0;
+
+var fire1 = document.querySelector("#fire1");
+var fire2 = document.querySelector("#fire2");
+var fire3 = document.querySelector("#fire3");
+var fire4 = document.querySelector("#fire4");
+var fire5 = document.querySelector("#fire5");
+var fire6 = document.querySelector("#fire6");
+
+let score = document.getElementById("scoreNumber");
+
+let house1Fire = true;
+let house2Fire = true;
+let house3Fire = true;
+let house4Fire = true;
+let house5Fire = true;
+let house6Fire = true;
+
 //https://github.com/NickDespo05/JS-Web-Game-Part-7.git
 //https://www.youtube.com/watch?v=VBVOXTgXX2U
