@@ -173,7 +173,6 @@ function placeCharacter(character) {
     document.getElementById(character).style.bottom = "0";
     document.getElementById(character).style.left = "0";
     document.getElementById(character).style.zIndex = "99999999";
-    // timer.innerHTML = `Time: ${seconds}`;
 }
 function createSelection(character) {
     let selectedCharacter = document.getElementById(character);
@@ -187,19 +186,25 @@ function createSelection(character) {
             currentCharacter = johnSelected;
             selectedCharacter.style.left = x + "px";
             selectedCharacter.style.bottom = y + "px";
-        } else if ((character.id = "lisa")) {
+        }
+        if ((character.id = "lisa")) {
             placeCharacter("lisa");
             selectionDisappear();
+            currentCharacter = lisaSelected;
             selectedCharacter.style.left = x + "px";
             selectedCharacter.style.bottom = y + "px";
-        } else if ((character.id = "phil")) {
+        }
+        if ((character.id = "phil")) {
             placeCharacter("phil");
             selectionDisappear();
+            currentCharacter = philSelected;
             selectedCharacter.style.left = x + "px";
             selectedCharacter.style.bottom = y + "px";
-        } else if ((character.id = "jen")) {
-            placeCharacter("lisa");
+        }
+        if ((character.id = "jen")) {
+            placeCharacter("jen");
             selectionDisappear();
+            currentCharacter = jenSelected;
             selectedCharacter.style.left = x + "px";
             selectedCharacter.style.bottom = y + "px";
         }
@@ -350,9 +355,9 @@ var x = 480;
 var y = 2000;
 var nearHouse, houseNumber;
 var johnSelected = document.querySelector("#john");
-let lisaSelected = document.querySelector("#lisa");
-let philSelected = document.querySelector("#phil");
-let jenSelected = document.querySelector("#jen");
+var lisaSelected = document.querySelector("#lisa");
+var philSelected = document.querySelector("#phil");
+var jenSelected = document.querySelector("#jen");
 var currentCharacter;
 var pointCount = 0;
 var seconds = 0;

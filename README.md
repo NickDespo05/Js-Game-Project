@@ -6,3 +6,5 @@ My dad told me that he once had the idea for there to be a firefighter game wher
 ADDITIONAL NOTES:
 When the player selects a key to make the character move then it will change pictures to potray a walking movement to the player.
 There needs to be a name given to the character image then it needs to be appended to the div marked playable area so it cannot travel outside it.
+
+Tried to solve error with multiple characters but did not have enough time to solve

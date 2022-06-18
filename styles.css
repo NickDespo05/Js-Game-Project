@@ -34,9 +34,9 @@ h3 {
     bottom: 10vh;
     opacity: 1;
 }
-#lisa {
+#jen {
     position: relative;
-    left: 29vw;
+    left: 10vw;
 }
 #background {
     width: 50vw;
@@ -54,7 +54,7 @@ h3 {
 }
 #john {
     position: relative;
-    left: 10vw;
+    left: 40vw;
     opacity: 1;
 }
 #game_title {
@@ -143,4 +143,16 @@ h3 {
     position: relative;
     left: 43vw;
     top: -18vh;
+}
+#phil {
+    position: relative;
+    left: 10vw;
+}
+#lisa {
+    position: relative;
+    left: 10vw;
+}
+#john_text {
+    position: relative;
+    left: 40vw;
 }
